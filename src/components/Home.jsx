@@ -9,7 +9,7 @@ class Home extends Component {
           <h2>Death Stare Battle</h2>
         </div>
         <Medals numberOfMedals={40}></Medals>
-        <div className='action'></div>
+        <h2 className='action'>give me your best #phelpsface</h2>
         <div className='camera'></div>
       </div>
     );
