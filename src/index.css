@@ -1,5 +1,103 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-}
+  font-family: sans-serif; }
+
+.bronze {
+  background-color: #d78c36;
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.1) 50%, transparent 50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: relative;
+  margin-top: 100px; }
+  .bronze:after {
+    content: '';
+    background-color: #009fba;
+    width: 12px;
+    height: 43px;
+    top: -45px;
+    left: 15px;
+    z-index: -1;
+    position: absolute;
+    transform: rotate(15deg); }
+  .bronze:before {
+    content: '';
+    background-color: #00CAED;
+    width: 12px;
+    height: 43px;
+    top: -45px;
+    z-index: -1;
+    position: absolute;
+    transform: rotate(-15deg); }
+
+.gold {
+  background-color: #fdb23b;
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.1) 50%, transparent 50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: relative;
+  margin-top: 100px; }
+  .gold:after {
+    content: '';
+    background-color: #009fba;
+    width: 12px;
+    height: 43px;
+    top: -45px;
+    left: 15px;
+    z-index: -1;
+    position: absolute;
+    transform: rotate(15deg); }
+  .gold:before {
+    content: '';
+    background-color: #00CAED;
+    width: 12px;
+    height: 43px;
+    top: -45px;
+    z-index: -1;
+    position: absolute;
+    transform: rotate(-15deg); }
+
+.silver {
+  background-color: #b9b7b5;
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.1) 50%, transparent 50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: relative;
+  margin-top: 100px; }
+  .silver:after {
+    content: '';
+    background-color: #009fba;
+    width: 12px;
+    height: 43px;
+    top: -45px;
+    left: 15px;
+    z-index: -1;
+    position: absolute;
+    transform: rotate(15deg); }
+  .silver:before {
+    content: '';
+    background-color: #00CAED;
+    width: 12px;
+    height: 43px;
+    top: -45px;
+    z-index: -1;
+    position: absolute;
+    transform: rotate(-15deg); }
+
+.container {
+  width: 600px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  border: 1px solid red; }
+  .container div {
+    float: left;
+    margin-right: 30px;
+    transition: all .2s ease; }
+    .container div:hover {
+      transform: scale(1.1); }
+
+/*# sourceMappingURL=index.css.map */
