@@ -58,7 +58,8 @@ $ribbon: #00CAED;
   display: block;
   margin: 0 auto;
   position: relative;
-  border: 1px solid red;
+  padding-left: 17px;
+  margin-top: -15px;
   div {
     float: left;
     margin-right: 30px;
@@ -66,5 +67,16 @@ $ribbon: #00CAED;
     &:hover {
       transform: scale(1.1);
     }
+  }
+}
+
+.header {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  h2 {
+    font-family: 'Arvo';
+    text-transform: uppercase;
+    letter-spacing: 5px;
   }
 }
