@@ -6,7 +6,7 @@ class Medals extends Component {
         let medalTypes = ['gold', 'silver', 'bronze'];
         let medals = [];
         let j = 0;
-        for (var i=0; i<=this.props.numberOfMedals; i++) {
+        for (var i=0; i<this.props.numberOfMedals; i++) {
             let medal = <Medal 
                 type={medalTypes[j]}
                 key={i}
