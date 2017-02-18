@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Medals from './Medals.jsx';
+import Uploader from './Uploader.jsx';
 
 class Home extends Component {
   render() {
@@ -10,9 +11,7 @@ class Home extends Component {
         </div>
         <Medals numberOfMedals={40}></Medals>
         <h2 className='action'>give me your best #phelpsface</h2>
-        <div className='camera'>
-          <input id='uploadImage' type='file' accept='image/*;capture=camera'/>
-        </div>
+        <Uploader/>
       </div>
     );
   }
