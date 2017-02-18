@@ -44,7 +44,9 @@ class Uploader extends Component {
             function(response) {
                 var result = response.outputs[0].data.concepts;
                 var medal = self.determineMedal(result);
-                console.log(medal)
+                console.log("here")
+                self.props.onSubmit(medal);
+                console.log("here2")
             },
             function(error) {
                 console.log("ERROR", error)
@@ -56,7 +58,6 @@ class Uploader extends Component {
         for (var i=0; i<response.length; i++) {
             medal = response[i].value > medal.value ? response[i] : medal;
         }
-        console.log(medal.name);
 
         return medal.name;
 	}
