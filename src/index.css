@@ -93,7 +93,8 @@ body {
   margin: 0 auto;
   position: relative;
   padding-left: 17px;
-  margin-top: -15px; }
+  margin-top: -45px;
+  overflow: hidden; }
   .container div {
     float: left;
     margin-right: 30px;
@@ -116,20 +117,29 @@ h2 {
 .action {
   clear: both;
   text-align: center;
-  top: 70px;
-  position: relative; }
+  margin-top: 40px; }
 
-.camera {
+#camera input[type="file"] {
+  display: none; }
+#camera #custom-upload {
   width: 600px;
   height: 50px;
   background-color: #000;
   position: absolute;
-  bottom: 0px;
+  color: #fff;
   margin-left: auto;
   margin-right: auto;
   left: 0;
-  right: 0; }
-  .camera:after {
-    content: ''; }
+  right: 0;
+  cursor: pointer;
+  border: 1px solid white; }
+  #camera #custom-upload:after {
+    font-family: FontAwesome;
+    content: "\f083";
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    font-size: 26px;
+    top: 10px; }
 
 /*# sourceMappingURL=index.css.map */
