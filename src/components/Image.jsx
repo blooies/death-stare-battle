@@ -12,9 +12,16 @@ class Image extends Component {
 		} else {
 			image = this.default;
 		}
+
+		var orientation;
+		if (this.props.orientation) {
+			orientation = 'orientation';
+		}
+		orientation += ' image-result'
+
 		return (
-			<div className='image-result'>
-				<img src={image}/>
+			<div className={orientation}>
+				<img className={this.props.orientation} src={image}/>
 			</div>
 		)
 	}
