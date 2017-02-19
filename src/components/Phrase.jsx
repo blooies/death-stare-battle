@@ -37,9 +37,9 @@ class Phrase extends Component {
 	}
 
 	getRandomPhrase(medal) {
-		var numberOfChoices = this[medal].length;
-		var randomNum = Math.floor(Math.random() * numberOfChoices);
-		var phrase = this[medal][randomNum];
+		let numberOfChoices = this[medal].length;
+		let randomNum = Math.floor(Math.random() * numberOfChoices);
+		let phrase = this[medal][randomNum];
 		return phrase;
 	}
 	render() {

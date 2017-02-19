@@ -29,24 +29,25 @@ class Uploader extends Component {
 		)
 	}
 	uploadPhoto(e) {
-		var self = this;
-		var file = e.target.files[0];
-		var fileReader = new FileReader();
+		let self = this;
+		let file = e.target.files[0];
+		let fileReader = new FileReader();
 		fileReader.readAsDataURL(file);
 		fileReader.addEventListener('loadend', function(response) {
-			var base64 = fileReader.result.split(',')[1];
+			let base64 = fileReader.result.split(',')[1];
 			self.predict(base64);
 		})
 	}
 	predict(image) {
-		var self = this;
+		let self = this;
 		this.app.models.predict(this.modelId, [image]).then(
             function(response) {
-                var result = response.outputs[0].data.concepts;
-                var medal = self.determineMedal(result);
-                console.log("here")
-                self.props.onSubmit(medal);
-                console.log("here2")
+                let result = response.outputs[0].data.concepts;
+                let medal = self.determineMedal(result);
+                self.props.onSubmit({
+                	medal: medal,
+                	image: image
+                });
             },
             function(error) {
                 console.log("ERROR", error)
@@ -54,7 +55,7 @@ class Uploader extends Component {
         )
 	}
 	determineMedal(response) {
-		var medal = {value: 0}
+		let medal = {value: 0}
         for (var i=0; i<response.length; i++) {
             medal = response[i].value > medal.value ? response[i] : medal;
         }
