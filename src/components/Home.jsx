@@ -3,6 +3,8 @@ import Medals from './Medals.jsx';
 import Medal from './Medal.jsx';
 import Uploader from './Uploader.jsx';
 import Phrase from './Phrase.jsx';
+import Image from './Image.jsx';
+
 
 class Home extends Component {
   constructor(props) {
@@ -16,11 +18,16 @@ class Home extends Component {
   }
 
   showMedal(params) {
-    this.setState({
-      medal: params.medal
-    })
+    var medal = params.medal;
     this.userImage = params.image;
-    console.log(this.state.medal)
+    this.setState({
+      medal: medal
+    })
+
+    // var b64 = "data:image/jpeg;base64," + params.image;
+    // var bin = atob(b64.split(',')[1]);
+    // var exif = EXIF.readFromBinaryFile(new BinaryFile(bin));
+    // alert(exif.Orientation);
   }
 
   renderWelcome() {
@@ -39,9 +46,13 @@ class Home extends Component {
   renderResult() {
     if (this.state.medal) {
       return (
-        <div>
+        <div className='results'>
           <Medal type={this.state.medal}/>
           <Phrase medal={this.state.medal}/>
+          <div id='faces'>
+            <Image/>
+            <Image source={this.userImage}/>
+          </div>
           <Uploader />
         </div>
       )
