@@ -15,11 +15,11 @@ class Home extends Component {
     this.renderResult = this.renderResult.bind(this);
   }
 
-  showMedal(medal) {
-    console.log("HERE", medal)
+  showMedal(params) {
     this.setState({
-      medal: medal
+      medal: params.medal
     })
+    this.userImage = params.image;
     console.log(this.state.medal)
   }
 
@@ -42,6 +42,7 @@ class Home extends Component {
         <div>
           <Medal type={this.state.medal}/>
           <Phrase medal={this.state.medal}/>
+          <Uploader />
         </div>
       )
     }
