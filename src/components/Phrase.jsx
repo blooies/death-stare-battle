@@ -6,9 +6,9 @@ class Phrase extends Component {
 		this.gold = [
 			"congrats, you've mastered the phelps face. #phelpsface",
 			"even darth vader would be scared of you.",
-			"stop looking at me. you're giving me goosebumps",
-			"i think you deserve your own meme",
-			"even michael phelps cant compare",
+			"stop looking at me. you're giving me goosebumps.",
+			"i think you deserve your own meme.",
+			"even michael phelps cant compare.",
 			"do you kiss your mother with that kind of face?",
 			"you stare would make babies cry."
 		]
@@ -19,7 +19,7 @@ class Phrase extends Component {
 			"need a bit more twisting in the face. try again.",
 			"scary, but easily forgettable.",
 			"you're almost there..let it all out.",
-			"not quite #phelpsface level",
+			"not quite #phelpsface level.",
 			"good shot, but next time more angry."
 		]
 
@@ -27,7 +27,7 @@ class Phrase extends Component {
 			"seriously? is that the best you got?",
 			"you need a little bit more practice.",
 			"is life all unicorns and rainbows to you?",
-			"go back to playing with telly tubbies",
+			"go back to playing with telly tubbies.",
 			"your stare would make babies laugh.",
 			"less happy. more angry.",
 			"you call that a death stare...?"
