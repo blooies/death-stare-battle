@@ -142,4 +142,22 @@ h2 {
     font-size: 26px;
     top: 10px; }
 
+#faces {
+  text-align: center;
+  margin: 0 auto;
+  width: 80%;
+  margin-bottom: 20px; }
+
+.image-result {
+  width: 40%;
+  margin-right: 20px;
+  display: inline-block; }
+  .image-result img {
+    width: 100%; }
+
+.results h2 {
+  text-align: center; }
+.results .silver, .results .gold, .results .bronze {
+  left: 50%; }
+
 /*# sourceMappingURL=index.css.map */
