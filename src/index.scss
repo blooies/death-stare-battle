@@ -61,13 +61,14 @@ $ribbon: #00CAED;
   padding-left: 17px;
   margin-top: -45px;
   overflow: hidden;
-  div {
-    float: left;
-    margin-right: 30px;
-    transition: all .2s ease;
-    &:hover {
-      transform: scale(1.1);
-    }
+}
+
+.gold, .silver, .bronze {
+  float: left;
+  margin-right: 30px;
+  transition: all .2s ease;
+  &:hover {
+    transform: scale(1.1);
   }
 }
 
@@ -142,6 +143,7 @@ h2 {
   }
   .silver, .gold, .bronze {
     left: 50%;
+    float: none !important;
   }
 }
 

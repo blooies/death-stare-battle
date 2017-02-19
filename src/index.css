@@ -95,12 +95,13 @@ body {
   padding-left: 17px;
   margin-top: -45px;
   overflow: hidden; }
-  .container div {
-    float: left;
-    margin-right: 30px;
-    transition: all .2s ease; }
-    .container div:hover {
-      transform: scale(1.1); }
+
+.gold, .silver, .bronze {
+  float: left;
+  margin-right: 30px;
+  transition: all .2s ease; }
+  .gold:hover, .silver:hover, .bronze:hover {
+    transform: scale(1.1); }
 
 body {
   font-family: 'Arvo'; }
@@ -158,7 +159,8 @@ h2 {
 .results h2 {
   text-align: center; }
 .results .silver, .results .gold, .results .bronze {
-  left: 50%; }
+  left: 50%;
+  float: none !important; }
 
 @media (max-width: 600px) {
   .container {
