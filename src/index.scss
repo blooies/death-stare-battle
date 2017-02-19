@@ -97,7 +97,7 @@ h2 {
     display: none;
   }
   #custom-upload {
-    width: 600px;
+    width: 80%;
     height: 50px;
     background-color: #000;
     position: absolute;
@@ -142,5 +142,31 @@ h2 {
   }
   .silver, .gold, .bronze {
     left: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 500px;
+  }
+}
+
+@media (max-width: 475px) {
+  .container {
+    width: 500px;
+    height: 700px;
+    left: 20px;
+  }
+
+  .action {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 485px) {
+  .container {
+    width: 100px;
+    height: 400px;
+    left: 40px;
   }
 }
