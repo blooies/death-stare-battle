@@ -5,7 +5,6 @@ import Uploader from './Uploader.jsx';
 import Phrase from './Phrase.jsx';
 import Image from './Image.jsx';
 
-
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -15,6 +14,13 @@ class Home extends Component {
     this.showMedal = this.showMedal.bind(this);
     this.renderWelcome = this.renderWelcome.bind(this);
     this.renderResult = this.renderResult.bind(this);
+    this.setOrientation = this.setOrientation.bind(this);
+  }
+
+  setOrientation(orientation) {
+    this.setState({
+      orientation: orientation
+    })
   }
 
   showMedal(params) {
@@ -23,11 +29,6 @@ class Home extends Component {
     this.setState({
       medal: medal
     })
-
-    // var b64 = "data:image/jpeg;base64," + params.image;
-    // var bin = atob(b64.split(',')[1]);
-    // var exif = EXIF.readFromBinaryFile(new BinaryFile(bin));
-    // alert(exif.Orientation);
   }
 
   renderWelcome() {
@@ -38,7 +39,7 @@ class Home extends Component {
         </div>
         <Medals numberOfMedals={40}></Medals>
         <h2 className='action'>give me your best #phelpsface</h2>
-        <Uploader onSubmit={this.showMedal}/>
+        <Uploader onSubmit={this.showMedal} setOrientation={this.setOrientation}/>
       </div>
     );
   }
@@ -51,7 +52,7 @@ class Home extends Component {
           <Phrase medal={this.state.medal}/>
           <div id='faces'>
             <Image/>
-            <Image source={this.userImage}/>
+            <Image source={this.userImage} orientation={this.state.orientation}/>
           </div>
           <Uploader />
         </div>
