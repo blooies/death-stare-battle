@@ -7,8 +7,8 @@ class Uploader extends Component {
 		super(props);
 		this.modelId = 'deathstares';
 		this.app = new Clarifai.App(
-        	'U-JMo15gzgwrvCFNSYzlFLjQG6rbm_eBcRnRSYV-',
-        	'uvjBXpZQnk73lGWXmbUyZdgcZ4mjSnSMyX497LEv'
+        	process.env.CLIENT_ID,
+        	process.env.CLIENT_SECRET
     	);
     	this.uploadPhoto = this.uploadPhoto.bind(this);
     	this.predict = this.predict.bind(this);
