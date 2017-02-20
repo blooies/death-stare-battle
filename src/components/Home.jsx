@@ -17,22 +17,14 @@ class Home extends Component {
     this.hideLoader = this.hideLoader.bind(this);
   }
 
-  // setOrientation(orientation) {
-  //   this.setState({
-  //     orientation: orientation
-  //   })
-  // }
-
   updateResult(params) {
-    var medal = params.medal;
     this.userImage = params.image;
     this.setState({
-      medal: medal
+      medal: params.medal
     })
     this.setState({
       orientation: params.orientation
     })
-
     this.hideLoader();
   }
 
