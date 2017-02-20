@@ -21,7 +21,7 @@ class Image extends Component {
 
 		return (
 			<div className={orientation}>
-				<img className={this.props.orientation} src={image}/>
+				<img role="presentation" className={this.props.orientation} src={image}/>
 			</div>
 		)
 	}
