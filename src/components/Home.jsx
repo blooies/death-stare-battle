@@ -11,24 +11,26 @@ class Home extends Component {
     this.state = {
       medal: null
     }
-    this.showMedal = this.showMedal.bind(this);
+    this.updateResult = this.updateResult.bind(this);
     this.renderWelcome = this.renderWelcome.bind(this);
     this.renderResult = this.renderResult.bind(this);
-    this.setOrientation = this.setOrientation.bind(this);
     this.hideLoader = this.hideLoader.bind(this);
   }
 
-  setOrientation(orientation) {
-    this.setState({
-      orientation: orientation
-    })
-  }
+  // setOrientation(orientation) {
+  //   this.setState({
+  //     orientation: orientation
+  //   })
+  // }
 
-  showMedal(params) {
+  updateResult(params) {
     var medal = params.medal;
     this.userImage = params.image;
     this.setState({
       medal: medal
+    })
+    this.setState({
+      orientation: params.orientation
     })
 
     this.hideLoader();
@@ -48,7 +50,7 @@ class Home extends Component {
         <Medals numberOfMedals={40}></Medals>
         <Medals view='phone-view' numberOfMedals={3}></Medals>
         <h2 className='action'>give me your best #phelpsface</h2>
-        <Uploader onSubmit={this.showMedal} setOrientation={this.setOrientation}/>
+        <Uploader onSubmit={this.updateResult} />
       </div>
     );
   }

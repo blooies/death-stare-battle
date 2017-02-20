@@ -35,12 +35,11 @@ class Uploader extends Component {
 
 		let self = this;
 		let file = e.target.files[0];
-
-		var onPhone = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+		let onPhone = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+		let orientation;
 
 		if (!onPhone) {
 			getOrientation(file, function(response) {
-				var orientation;
 				if (response === 6 || response === 5) {
 					orientation = 'ninety';
 				} else if (response === 8 || response === 7) {
@@ -48,8 +47,6 @@ class Uploader extends Component {
 				} else if (response === 3 || response === 4) {
 					orientation = 'one-eighty';
 				}
-
-				self.props.setOrientation(orientation);
 			})
 		}
 
@@ -57,10 +54,10 @@ class Uploader extends Component {
 		fileReader.readAsDataURL(file);
 		fileReader.addEventListener('loadend', function(response) {
 			let base64 = fileReader.result.split(',')[1];
-			self.predict(base64);
+			self.predict(base64, orientation);
 		})
 	}
-	predict(image) {
+	predict(image, orientation) {
 		let self = this;
 		this.app.models.predict(this.modelId, [image]).then(
             function(response) {
@@ -68,7 +65,8 @@ class Uploader extends Component {
                 let medal = self.determineMedal(result);
                 self.props.onSubmit({
                 	medal: medal,
-                	image: image
+                	image: image,
+                	orientation: orientation
                 });
             },
             function(error) {
