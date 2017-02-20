@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 var Clarifai = require('clarifai');
+import { getOrientation } from '../orientation.js';
 
 class Uploader extends Component {
 	constructor(props) {
@@ -31,6 +32,20 @@ class Uploader extends Component {
 	uploadPhoto(e) {
 		let self = this;
 		let file = e.target.files[0];
+
+		getOrientation(file, function(response) {
+			var orientation;
+			if (response === 6 || response === 5) {
+				orientation = 'ninety';
+			} else if (response === 8 || response === 7) {
+				orientation = 'two-seventy';
+			} else if (response === 3 || response === 4) {
+				orientation = 'one-eighty';
+			}
+
+			self.props.setOrientation(orientation);
+		})
+
 		let fileReader = new FileReader();
 		fileReader.readAsDataURL(file);
 		fileReader.addEventListener('loadend', function(response) {
