@@ -20,7 +20,7 @@ class Medals extends Component {
 
     render() {
         return (
-            <div className='container'>
+            <div className='container' id={this.props.view ? this.props.view : 'non-phone-view'}>
                 {this.getMedals()}
             </div>
         )

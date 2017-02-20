@@ -46,6 +46,7 @@ class Home extends Component {
           <h2>Death Stare Battle</h2>
         </div>
         <Medals numberOfMedals={40}></Medals>
+        <Medals view='phone-view' numberOfMedals={3}></Medals>
         <h2 className='action'>give me your best #phelpsface</h2>
         <Uploader onSubmit={this.showMedal} setOrientation={this.setOrientation}/>
       </div>
