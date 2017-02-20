@@ -10,7 +10,7 @@ class Phrase extends Component {
 			"i think you deserve your own meme.",
 			"even michael phelps cant compare.",
 			"do you kiss your mother with that kind of face?",
-			"you stare would make babies cry."
+			"your stare would make babies cry."
 		]
 
 		this.silver = [
