@@ -46,6 +46,7 @@ class Uploader extends Component {
 				orientation = 'one-eighty';
 			}
 
+			document.getElementById('test').innerHTML = response + orientation;
 			self.props.setOrientation(orientation);
 		})
 
