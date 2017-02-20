@@ -30,6 +30,9 @@ class Uploader extends Component {
 		)
 	}
 	uploadPhoto(e) {
+		document.getElementById('loader').style.display = 'block';
+		document.getElementById('root').style.opacity = .2;
+
 		let self = this;
 		let file = e.target.files[0];
 
