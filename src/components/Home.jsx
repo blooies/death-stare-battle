@@ -15,6 +15,7 @@ class Home extends Component {
     this.renderWelcome = this.renderWelcome.bind(this);
     this.renderResult = this.renderResult.bind(this);
     this.setOrientation = this.setOrientation.bind(this);
+    this.hideLoader = this.hideLoader.bind(this);
   }
 
   setOrientation(orientation) {
@@ -29,6 +30,13 @@ class Home extends Component {
     this.setState({
       medal: medal
     })
+
+    this.hideLoader();
+  }
+
+  hideLoader() {
+    document.getElementById('loader').style.display = 'none';
+    document.getElementById('root').style.opacity = 1;
   }
 
   renderWelcome() {
