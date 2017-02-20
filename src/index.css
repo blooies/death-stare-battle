@@ -139,9 +139,13 @@ h2 {
     content: "\f083";
     color: #fff;
     position: absolute;
-    left: 50%;
     font-size: 26px;
-    top: 10px; }
+    top: 10px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 27px; }
 
 #faces {
   text-align: center;
@@ -179,18 +183,14 @@ h2 {
   .container {
     width: 500px; } }
 @media (max-width: 475px) {
-  .container {
-    width: 500px;
-    height: 700px;
-    left: 20px; }
+  #phone-view {
+    display: block !important; }
+
+  #non-phone-view {
+    display: none; }
 
   .action {
     margin-top: 20px; } }
-@media (max-width: 485px) {
-  .container {
-    width: 100px;
-    height: 400px;
-    left: 40px; } }
 #loader {
   display: none;
   position: absolute;
@@ -233,5 +233,9 @@ h2 {
     -ms-transform: translateY(-20px);
     -o-transform: translateY(-20px);
     transform: translateY(-20px); } }
+#phone-view {
+  width: 40px;
+  height: 400px;
+  display: none; }
 
 /*# sourceMappingURL=index.css.map */
