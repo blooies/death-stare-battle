@@ -36,19 +36,23 @@ class Uploader extends Component {
 		let self = this;
 		let file = e.target.files[0];
 
-		getOrientation(file, function(response) {
-			var orientation;
-			if (response === 6 || response === 5) {
-				orientation = 'ninety';
-			} else if (response === 8 || response === 7) {
-				orientation = 'two-seventy';
-			} else if (response === 3 || response === 4) {
-				orientation = 'one-eighty';
-			}
+		var onPhone = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
 
-			document.getElementById('test').innerHTML = response + orientation;
-			self.props.setOrientation(orientation);
-		})
+		if (!onPhone) {
+			getOrientation(file, function(response) {
+				var orientation;
+				if (response === 6 || response === 5) {
+					orientation = 'ninety';
+				} else if (response === 8 || response === 7) {
+					orientation = 'two-seventy';
+				} else if (response === 3 || response === 4) {
+					orientation = 'one-eighty';
+				}
+
+				document.getElementById('test').innerHTML = response + orientation;
+				self.props.setOrientation(orientation);
+			})
+		}
 
 		let fileReader = new FileReader();
 		fileReader.readAsDataURL(file);
