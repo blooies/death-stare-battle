@@ -41,6 +41,18 @@ $ribbon: #00CAED;
   }
 }
 
+.hidden {
+  color: #fff;
+}
+
+.disclaimer {
+  margin-top: 100px;
+}
+
+p {
+  text-align: center;
+}
+
 .bronze {
   @include createMedal($bronze, $ribbon);
 }
